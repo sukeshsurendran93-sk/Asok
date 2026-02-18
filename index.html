@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asok Gopinathan - AML/CFT Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Abhaya Libre', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#0f172a',
+                        'dark-elevated': '#1e293b',
+                        'dark-surface': '#334155',
+                        'accent-cyan': '#06b6d4',
+                        'accent-purple': '#8b5cf6',
+                        'accent-emerald': '#10b981',
+                        'accent-amber': '#f59e0b',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'slide-in-right': 'slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-shift': 'gradientShift 15s ease infinite',
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-60px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(60px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradientShift: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animated Background Gradient */
+        .animated-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e293b, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #06b6d4;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(6, 182, 212, 0.5);
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+
+        .cursor-hover .cursor-dot {
+            width: 12px;
+            height: 12px;
+            background: #8b5cf6;
+        }
+
+        .cursor-hover .cursor-outline {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #0891b2, #7c3aed);
+        }
+
+        /* Glass Effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-strong {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-amber {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Magnetic Button */
+        .magnetic-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Card Hover Effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Timeline Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #06b6d4, #8b5cf6, #10b981);
+            opacity: 0.3;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skill Badge */
+        .skill-badge {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-badge:hover::before {
+            left: 100%;
+        }
+
+        .skill-badge:hover {
+            background: rgba(6, 182, 212, 0.2);
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Icon Box */
+        .icon-box {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Corner Badge */
+        .corner-badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+        }
+
+        /* Category Tag */
+        .category-tag {
+            background: rgba(59, 130, 246, 0.9);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Corner Accents */
+        .corner-accent {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .corner-accent-tl {
+            top: -2px;
+            left: -2px;
+            border-right: 0;
+            border-bottom: 0;
+        }
+
+        .corner-accent-br {
+            bottom: -2px;
+            right: -2px;
+            border-left: 0;
+            border-top: 0;
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Gradient Button */
+        .gradient-btn {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+        }
+
+        .gradient-btn:hover {
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Glow Text */
+        .glow-text {
+            text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Loading Screen */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-text {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        /* Custom Selection */
+        ::selection {
+            background: rgba(6, 182, 212, 0.3);
+            color: white;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+
+            .timeline-line::before {
+                left: 2rem;
+            }
+        }
+
+        /* Grid Background */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Noise Texture */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Floating Orbs Background */
+        .floating-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            top: -10%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            bottom: -10%;
+            left: -10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+            top: 40%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .orb-4 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            bottom: 20%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body class="animated-bg text-white overflow-x-hidden font-sans antialiased min-h-screen">
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-text">Asok Gopinathan</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Floating Orbs Background -->
+    <div class="floating-orbs">
+        <div class="orb orb-1 animate-blob"></div>
+        <div class="orb orb-2 animate-blob" style="animation-delay: 2s;"></div>
+        <div class="orb orb-3 animate-blob" style="animation-delay: 4s;"></div>
+        <div class="orb orb-4 animate-blob" style="animation-delay: 6s;"></div>
+    </div>
+
+    <!-- Grid Background -->
+    <div class="fixed inset-0 grid-bg pointer-events-none z-0 opacity-50"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="glass fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#home"
+                    class="magnetic-btn text-xl md:text-2xl font-bold gradient-text hover:opacity-80 transition-opacity">
+                    Asok G.
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-accent-cyan font-medium">Home</a>
+                    <a href="#experience"
+                        class="nav-link text-gray-300 hover:text-accent-cyan font-medium">Experience</a>
+                    <a href="#competencies" class="nav-link text-gray-300 hover:text-accent-cyan font-medium">Skills</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-accent-cyan font-medium">Education</a>
+                    <a href="#contact"
+                        class="magnetic-btn px-6 py-2.5 bg-gradient-to-r from-accent-cyan to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-gray-300 hover:text-white focus:outline-none magnetic-btn p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col gap-4">
+                    <a href="#home"
+                        class="text-gray-300 hover:text-accent-cyan font-medium py-2 border-b border-white/10">Home</a>
+                    <a href="#experience"
+                        class="text-gray-300 hover:text-accent-cyan font-medium py-2 border-b border-white/10">Experience</a>
+                    <a href="#competencies"
+                        class="text-gray-300 hover:text-accent-cyan font-medium py-2 border-b border-white/10">Skills</a>
+                    <a href="#education"
+                        class="text-gray-300 hover:text-accent-cyan font-medium py-2 border-b border-white/10">Education</a>
+                    <a href="#contact" class="text-accent-cyan font-semibold py-2 flex items-center gap-2">
+                        Contact <span class="text-xl">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+                <!-- Text Content -->
+                <div class="w-full lg:w-3/5 space-y-6">
+                    <div class="space-y-2 reveal" data-delay="0.1">
+                        <h1 class="text-6xl md:text-8xl font-bold text-white glow-text tracking-tight">
+                            Asok
+                        </h1>
+                        <h1 class="text-6xl md:text-8xl font-bold text-white glow-text font-serif tracking-tight">
+                            Gopinathan
+                        </h1>
+                    </div>
+
+                    <div class="reveal" data-delay="0.3">
+                        <h2 class="text-2xl md:text-3xl font-light text-gray-300 mb-4 tracking-wide">
+                            Compliance & Operations Professional
+                        </h2>
+                    </div>
+
+                    <p class="text-lg md:text-xl leading-relaxed text-gray-400 reveal" data-delay="0.4">
+                        Dedicated professional with <span class="text-accent-cyan font-semibold">20+ years</span> of
+                        experience in AML/CFT compliance, KYC/EDD reviews, and financial operations. Expert in sanctions
+                        screening and regulatory reporting.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 py-6 reveal" data-delay="0.5">
+                        <div class="glass rounded-2xl p-4 text-center hover-lift group cursor-pointer magnetic-btn">
+                            <div
+                                class="text-4xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform">
+                                20+
+                            </div>
+                            <div class="text-xs text-green-300 uppercase tracking-wider">Years Exp.</div>
+                        </div>
+                        <div class="glass rounded-2xl p-4 text-center hover-lift group cursor-pointer magnetic-btn">
+                            <div
+                                class="text-4xl font-bold text-purple-400 mb-1 group-hover:scale-110 transition-transform">
+                                17+</div>
+                            <div class="text-xs text-emerald-300 uppercase tracking-wider">Years at Al Fardan</div>
+                        </div>
+                        <div class="glass rounded-2xl p-4 text-center hover-lift group cursor-pointer magnetic-btn">
+                            <div
+                                class="text-4xl font-bold text-emerald-400 mb-1 group-hover:scale-110 transition-transform">
+                                5+</div>
+                            <div class="text-xs text-purple-300 uppercase tracking-wider">Career Levels</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 reveal" data-delay="0.6">
+                        <a href="mailto:asokgopinathan@live.com?subject=AML%2FCFT%20Inquiry"
+                            class="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent-cyan to-blue-600 text-white font-semibold rounded-2xl shadow-lg shadow-cyan-500/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden">
+                            <span
+                                class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
+                            <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <span class="relative z-10">Get in Touch</span>
+                        </a>
+
+                        <a href="./Asok_Gopinathan_CV.pdf" download
+                            class="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-4 glass text-accent-cyan font-semibold rounded-2xl transition-all duration-300 hover:bg-accent-cyan/10 hover:scale-105 hover:border-accent-cyan/50">
+                            <svg class="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="w-full lg:w-2/5 flex justify-center reveal" data-delay="0.3">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent-cyan via-purple-500 to-accent-cyan rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-shift">
+                        </div>
+                        <div
+                            class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="./images/asok-professional.jpeg"
+                                alt="Asok Gopinathan professional photo">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent">
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float magnetic-btn cursor-pointer">
+                            <div class="relative">
+                                <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                                <div class="absolute inset-0 w-3 h-3 bg-emerald-400 rounded-full animate-ping"></div>
+                            </div>
+                            <span class="text-sm font-semibold text-white">Open to Work</span>
+                        </div>
+
+                        <!-- Corner Decorations -->
+                        <div class="corner-accent corner-accent-tl"></div>
+                        <div class="corner-accent corner-accent-br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="min-h-screen py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="text-white">Professional</span>
+                    <span class="gradient-text">Experience</span>
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-accent-cyan to-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative timeline-line max-w-5xl mx-auto">
+
+                <!-- Job 1 -->
+                <div class="relative mb-12 md:mb-0 md:min-h-[300px] flex flex-col md:flex-row items-center reveal">
+                    <div
+                        class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-accent-cyan rounded-full border-4 border-gray-900 z-10 shadow-lg shadow-cyan-500/50">
+                    </div>
+                    <div class="w-full md:w-5/12 md:mr-auto md:pr-12 pl-20 md:pl-0">
+                        <div class="glass-strong rounded-2xl p-6 hover-lift relative group">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-accent-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="inline-block px-4 py-1.5 rounded-full bg-accent-cyan/10 text-accent-cyan text-sm font-semibold mb-3 border border-accent-cyan/30">
+                                    2023 — Present
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Compliance Associate</h3>
+                                <div class="flex items-center gap-2 text-accent-cyan mb-4 text-sm font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                        </path>
+                                    </svg>
+                                    <span>Mercantile International Exchange</span>
+                                </div>
+                                <ul class="space-y-3 text-gray-400 text-sm">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Performing KYC, CDD, and EDD reviews for retail & corporate clients</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Daily sanctions screening using OFAC, HMT, UN, EU, DNFBP lists</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>STR, SAR, PTR, and CTR ML submissions</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Transaction monitoring and risk identification</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-5/12"></div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative mb-12 md:mb-0 md:min-h-[350px] flex flex-col md:flex-row items-center reveal">
+                    <div
+                        class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900 z-10 shadow-lg shadow-purple-500/50">
+                    </div>
+                    <div class="hidden md:block md:w-5/12"></div>
+                    <div class="w-full md:w-5/12 md:ml-auto md:pl-12 pl-20 md:pl-0">
+                        <div class="glass-strong rounded-2xl p-6 hover-lift relative group">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 text-purple-400 text-sm font-semibold mb-3 border border-purple-500/30">
+                                    2008 — 2023
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Branch Manager / MLRO</h3>
+                                <div class="flex items-center gap-2 text-purple-400 mb-4 text-sm font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                        </path>
+                                    </svg>
+                                    <span>Al Fardan International Exchange LLC</span>
+                                </div>
+                                <ul class="space-y-3 text-gray-400 text-sm">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Responsible: Dir. & CEO No. 1 Senior Officer — Branch MLRO — Branch
+                                            Manager</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Full branch operations & staff supervision (17 years)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Branch MLRO for AML/CFT compliance</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>High-volume cash, FX, and remittance operations</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>CBUAE regulatory adherence & risk controls</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative flex flex-col md:flex-row items-center reveal">
+                    <div
+                        class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-gray-900 z-10 shadow-lg shadow-emerald-500/50">
+                    </div>
+                    <div class="w-full md:w-5/12 md:mr-auto md:pr-12 pl-20 md:pl-0">
+                        <div class="glass-strong rounded-2xl p-6 hover-lift relative group">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-semibold mb-3 border border-emerald-500/30">
+                                    2004 — 2008
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Administrative Assistant</h3>
+                                <div class="flex items-center gap-2 text-emerald-400 mb-2 text-sm font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                        </path>
+                                    </svg>
+                                    <span>Wilbur Smith Associates</span>
+                                </div>
+                                <div class="text-gray-500 text-xs mb-4 italic">
+                                    Kerala Govt. PWD Road Maintenance Project
+                                </div>
+                                <ul class="space-y-3 text-gray-400 text-sm">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Project documentation & data entry</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Coordination between engineers & consultants</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>Audit-ready record management</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-5/12"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section id="competencies" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="text-white">Core</span>
+                    <span class="gradient-text">Competencies</span>
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-accent-cyan to-blue-600 mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">Expertise in compliance, operations, and regulatory
+                    frameworks</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+                <!-- Card 1: Compliance -->
+                <div class="glass-strong rounded-2xl p-6 hover-lift reveal group" data-delay="0.1">
+                    <div
+                        class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                        🛡
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-accent-cyan transition-colors">
+                        Compliance</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">AML/CFT</span>
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">KYC/CDD/EDD</span>
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Sanctions</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">PEP
+                            Checks</span>
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">STR/SAR</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Operations -->
+                <div class="glass-strong rounded-2xl p-6 hover-lift reveal group" data-delay="0.2">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-5 text-white text-2xl shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                        🏛
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                        Operations</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Branch
+                            Mgmt</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Cash
+                            Handling</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">FX
+                            Operations</span>
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Remittances</span>
+                        <span
+                            class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Reconciliation</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Screening Lists -->
+                <div class="glass-strong rounded-2xl p-6 hover-lift reveal group" data-delay="0.3">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-amber to-orange-600 flex items-center justify-center mb-5 text-white text-2xl shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform duration-300">
+                        ☰
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-accent-amber transition-colors">
+                        Screening Lists</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">OFAC</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">UN
+                            Lists</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">EU/UK</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">DFSI</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">GO AML</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Languages -->
+                <div class="glass-strong rounded-2xl p-6 hover-lift reveal group" data-delay="0.4">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-5 text-white text-2xl shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-300">
+                        🌐
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                        Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">English
+                            Fluent</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Malayalam
+                            Native</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg text-xs text-gray-300 font-medium">Hindi
+                            Intermediate</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="text-white">Education &</span>
+                    <span class="gradient-text">Certifications</span>
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-accent-cyan mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">Continuous learning and professional development</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+                <!-- Card 1 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.1">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        🏆
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-accent-amber/10 flex items-center justify-center text-accent-amber mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Globally Certified KYC Specialist</h3>
+                        <p class="text-gray-400 text-sm mb-4">Go-AKS (Global AKS Assessment Force)</p>
+                    </div>
+                    <span class="category-tag px-3 py-1 rounded-full text-xs text-white font-medium inline-block">
+                        Global Certification
+                    </span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.2">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        🎓
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Bachelor of Arts</h3>
+                        <p class="text-gray-400 text-sm mb-1">University of Kerala (1997-2000)</p>
+                        <p class="text-gray-500 text-xs italic">Political Science, Economics & History</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.3">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        📜
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Compliance Training Program</h3>
+                        <p class="text-gray-400 text-sm mb-4">Future Target Institute, Dubai</p>
+                    </div>
+                    <span class="category-tag px-3 py-1 rounded-full text-xs text-white font-medium inline-block">
+                        CPD
+                    </span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.4">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        📜
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Compliance Training Program</h3>
+                        <p class="text-gray-400 text-sm mb-4">Drove Academy, Dubai</p>
+                    </div>
+                    <span class="category-tag px-3 py-1 rounded-full text-xs text-white font-medium inline-block">
+                        CPD
+                    </span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.5">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        ✈
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Diploma in Travel & Tourism</h3>
+                        <p class="text-gray-400 text-sm mb-4">SivaSak School, Kerala</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-strong rounded-2xl p-6 relative hover-lift reveal group" data-delay="0.6">
+                    <div
+                        class="corner-badge absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold z-10 group-hover:scale-110 transition-transform">
+                        💻
+                    </div>
+                    <div class="mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 pr-8">Internet Programming</h3>
+                        <p class="text-gray-400 text-sm mb-1">SSI, Kerala</p>
+                        <p class="text-gray-500 text-xs italic">HTML, C++, Java, Linux</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="glass rounded-3xl p-8 md:p-16 max-w-5xl mx-auto text-center reveal relative overflow-hidden">
+
+                <!-- Background Glow -->
+                <div
+                    class="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-accent-cyan/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div class="relative z-10">
+                    <div
+                        class="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-amber-600/30 to-yellow-600/30 border border-amber-500/30 text-amber-300 text-sm font-semibold tracking-wider uppercase mb-8">
+                        Get In Touch
+                    </div>
+
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                        <span class="gradient-text-amber">
+                            Let's Work Together
+                        </span>
+                    </h2>
+
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                        Seeking opportunities in compliance, risk management, and financial operations in Dubai, UAE
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+
+                        <div
+                            class="glass rounded-2xl p-6 flex items-center gap-4 text-left hover-lift magnetic-btn cursor-pointer group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan text-2xl flex-shrink-0 group-hover:bg-accent-cyan/20 transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-accent-cyan text-sm mb-1 uppercase tracking-wider">Phone</div>
+                                <div class="text-white font-semibold text-lg">+971-55-3654989</div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="glass rounded-2xl p-6 flex items-center gap-4 text-left hover-lift magnetic-btn cursor-pointer group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-indigo-400 text-sm mb-1 uppercase tracking-wider">Location</div>
+                                <div class="text-white font-semibold text-lg">Dubai, UAE</div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="glass rounded-2xl p-6 flex items-center gap-4 text-left hover-lift magnetic-btn cursor-pointer group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan text-2xl flex-shrink-0 group-hover:bg-accent-cyan/20 transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-accent-cyan text-sm mb-1 uppercase tracking-wider">Email</div>
+                                <div class="text-white font-semibold text-sm">asokgopinathan@live.com</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="mailto:asokgopinathan@live.com?subject=Opportunity%20in%20Dubai"
+                        class="magnetic-btn inline-flex items-center gap-3 px-10 py-5 rounded-full gradient-btn text-white font-bold text-lg transition-all duration-300 hover:scale-105 group relative overflow-hidden">
+                        <span
+                            class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
+                        <svg class="w-6 h-6 relative z-10 group-hover:rotate-45 transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                        </svg>
+                        <span class="relative z-10">Send Message</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center relative z-10 border-t border-white/10">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-sm mb-2">&copy; 2024 Asok Gopinathan. All rights reserved.</p>
+            <!-- <p class="text-gray-600 text-xs">Designed with precision and compliance in mind</p> -->
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Custom Cursor
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Magnetic Effect for Buttons
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0) scale(1)';
+            });
+        });
+
+        // Cursor Hover Effect
+        const hoverElements = document.querySelectorAll('a, button, .hover-lift');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, delay * 1000);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(255, 255, 255, 0.05)';
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
